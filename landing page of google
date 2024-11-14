@@ -1,0 +1,164 @@
+html code :-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Google Landing Page -->
+    <div class="container">
+        <!-- Google Logo -->
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Google Logo">
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search">
+            <input type="text" id="search-input" placeholder="Search Google or type a URL">
+            <div class="search-buttons">
+                <button class="btn" onclick="search()">Google Search</button>
+                <button class="btn" onclick="saloniIntro()">Hi, I'm Saloni</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                <span>Google offered in: <a href="#">English</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+css code:-
+
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Light blue background */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 50px; /* Adjust to give space from the top */
+}
+
+.search {
+    margin-top: 30px;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 584px;
+    height: 44px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 24px;
+    margin: 20px 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #ff66b2; /* Pink color when focused */
+}
+
+.search-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    background-color: #ff66b2; /* Pink buttons */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff3399; /* Darker pink on hover */
+    transform: translateY(-4px); /* Add subtle lift effect */
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.footer-text {
+    color: #5f6368;
+}
+
+.footer-text a {
+    color: #ff66b2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+    color: #ff3399;
+}
+
+/* Make the page mobile-friendly */
+@media (max-width: 600px) {
+    .search-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #search-input {
+        width: 90%;
+    }
+}
+
+js code:-
+
+// Focus on the search input when the page loads
+window.onload = function() {
+    document.getElementById("search-input").focus();
+};
+
+// Function to handle the Google search form
+function search() {
+    let query = document.getElementById("search-input").value;
+    if (query) {
+        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    }
+}
+
+// Function for the "Hi, I'm Saloni" button
+function saloniIntro() {
+    alert("Hi, I'm Saloni! Welcome to my personal page. How can I assist you today?");
+}
